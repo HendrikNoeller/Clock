@@ -24,6 +24,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1D6E1B41AC5E0110044CC0C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		B1D6E1B61AC5E0430044CC0C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		B1FB00431AC5CEF70038E0C5 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FB00471AC5CEF70038E0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1FB00481AC5CEF70038E0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 				B1FB00481AC5CEF70038E0C5 /* AppDelegate.swift */,
 				B1FB004A1AC5CEF70038E0C5 /* Images.xcassets */,
 				B1FB004C1AC5CEF70038E0C5 /* MainMenu.xib */,
+				B1D6E1B41AC5E0110044CC0C /* README.md */,
+				B1D6E1B61AC5E0430044CC0C /* LICENSE.txt */,
 				B1FB00461AC5CEF70038E0C5 /* Supporting Files */,
 			);
 			path = Clock;
@@ -393,6 +397,7 @@
 				B1FB005F1AC5CEF70038E0C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1FB00601AC5CEF70038E0C5 /* Build configuration list for PBXNativeTarget "ClockTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +406,7 @@
 				B1FB00621AC5CEF70038E0C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
