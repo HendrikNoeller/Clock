@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        textLabel.alphaValue = 0.8;
+        textLabel.alphaValue = 0.85;
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
         formatter = NSDateFormatter()
         formatter?.dateFormat = "HH:mm:ss"
