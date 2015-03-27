@@ -9,19 +9,35 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
 
+    @IBOutlet weak var textLabel: NSTextField!
     @IBOutlet weak var window: NSWindow!
+    var timer : NSTimer?
+    var formatter : NSDateFormatter?
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        textLabel.alphaValue = 0.8;
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
+        formatter = NSDateFormatter()
+        formatter?.dateFormat = "HH:mm:ss"
+        tick()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
-
+    
+    func tick() {
+        if let dateString = formatter?.stringFromDate(NSDate()) {
+            textLabel.stringValue = dateString
+        }
+    }
+    
+    func windowWillClose(notification: NSNotification) {
+        exit(0)
+    }
 
 }
 

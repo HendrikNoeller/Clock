@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,9 +11,9 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Clock" customModuleProvider="target">
             <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="textLabel" destination="qov-ng-hhr" id="CQR-mO-2af"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -666,15 +666,40 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Clock" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+        <window title="Clock" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="alertPanel" id="BQ8-tZ-47G" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" nonactivatingPanel="YES" HUD="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES" stationary="YES" participatesInCycle="YES" fullScreenAuxiliary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <rect key="contentRect" x="1037" y="688" width="290" height="80"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="A1v-uL-lXH">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qov-ng-hhr">
+                        <rect key="frame" x="18" y="0.0" width="254" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="BjD-69-iVq"/>
+                            <constraint firstAttribute="width" constant="250" id="vH9-CN-IRm"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="10:20:22" id="ax6-sV-RDr">
+                            <font key="font" size="60" name="HelveticaNeue-Light"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qov-ng-hhr" firstAttribute="leading" secondItem="A1v-uL-lXH" secondAttribute="leading" constant="20" id="0a5-kL-WPE"/>
+                    <constraint firstItem="qov-ng-hhr" firstAttribute="top" secondItem="A1v-uL-lXH" secondAttribute="top" id="VEp-nJ-QGd"/>
+                    <constraint firstAttribute="bottom" secondItem="qov-ng-hhr" secondAttribute="bottom" id="mV0-3o-QcM"/>
+                    <constraint firstAttribute="trailing" secondItem="qov-ng-hhr" secondAttribute="trailing" constant="20" id="vaH-mF-hbR"/>
+                </constraints>
             </view>
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="brW-Nl-lB3"/>
+            </connections>
+            <point key="canvasLocation" x="207.5" y="174"/>
         </window>
     </objects>
 </document>
