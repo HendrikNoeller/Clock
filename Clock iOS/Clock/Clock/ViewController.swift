@@ -19,9 +19,29 @@ class ViewController: UIViewController {
         textLabel.numberOfLines = 1;
         textLabel.adjustsFontSizeToFitWidth = true;
 
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
         formatter = NSDateFormatter()
         formatter?.dateFormat = "HH:mm:ss"
+        startTimer()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationDidEnterBackground", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        startTimer()
+    }
+    
+    
+    func applicationWillEnterForeground() {
+        startTimer()
+    }
+    
+    func applicationDidEnterBackground() {
+        timer?.invalidate()
+    }
+    
+    func startTimer() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
         tick()
     }
     
